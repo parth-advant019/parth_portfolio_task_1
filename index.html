@@ -1,680 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-    }
-    html {
-    scroll-behavior: smooth;
-   }
-
-
-    
-
-    
-    .navbar{
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background: rgba(15, 23, 42, 0.95);
-        display: flex;
-        justify-content: flex-end;
-        position: fixed;
-        
-        height: 50px;
-        height: 60px;
-        align-items: center;
-        
-        top: 0;
-        z-index: 1000;
-        
-    
-    }
-   
-
-
-
-
-    .navLinks{
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        padding: 20px;
-        
-
-         
-
-    }
-
-    .navLinks a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .navLinks a:hover{
-        background-color: rgba(193, 202, 216, 0.3);
-    }
-
-    /* home css*/
-    .homeClass{
-        background: linear-gradient(
-        to bottom,
-        #1e3a8a,
-        #1e40af
-    );    
-        min-height: 80vh;
-        padding: 80px 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .homeContent{
-        display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 90px;
-        
-    }
-    .homeContent p{
-        color:white;
-        font-size: 2rem;
-        
-
-        
-        
-    }
-    .homeContent h1{
-      color:white;
-      font-size: 3rem;
-    }
-
-    .imgClass img{
-            
-    width: 100%;
-    max-width: 300px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-     margin-left: 70px; 
-    margin-top: 80px;
-    border: solid 8px blue;
-    
- 
-
-            
-
-    }
-    /*about css*/
-    
-    #about{
-        min-height: 100vh;
-        padding: 80px 20px;
-        
-    }
-
-    .aboutTitle{
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .about-content{
-        display: flex;
-        
-        justify-content: center;
-        align-items: center;
-
-    }
-    .about-text{
-        max-width: 700px;
-        text-align: justify;
-        line-height: 1.6;
-
-    }
-
-    /*skills css*/
-    .skillsTitle{
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .languageGrid{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
-
-    }
-    .languageCategory h3{
-        margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color:rgba(60, 97, 185, 0.95);
-            text-align: center;
-    }
-    .languageItem{
-           background-color: aliceblue;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            gap: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 0.6rem;
-            justify-content: flex-start;
-            font-size: large;
-    }
-    .languageItem:hover{
-        background-color: rgba(180, 192, 219, 0.95);
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-    }
-    /*project css*/
-    #project{
-        min-height: 100vh;
-        padding: 80px 20px;
-        background-color: #eff6ff;
-    }
-    .projectTitle{
-        text-align: center;
-        margin-bottom: 20px;
-
-    }
-    .projectGrid{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
-
-    }
-    .progectCard{
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-
-
-    }
-    .progectCard:hover{
-        box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
-    }
-    .progectCard h3{
-        margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color:rgba(60, 97, 185, 0.95);
-            text-align: center;
-
-    }
-    .progectCard p{
-        color:#64748b;
-        text-align: center;
-
-    }
-    /*certificates .....*/
-    #certificates{
-        min-height: 100vh;
-        padding: 80px 20px;
-        background-color: #eff6ff;
-    }
-    .certificatesTitle{
-        text-align: center;
-        margin-bottom: 20px;
-
-    }
-    .certificatesGrid{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
-
-    }
-    .certificatesCard{
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            cursor: pointer;
-    }
-    .certificatesCard h3{
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        color:#0f172a;
-
-    }
-    .certificatesProvider{
-      font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2563eb;
-
-    }
-    .certificatesYear{
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: #64748b;
-    }
-    .certificatesCard:hover{
-        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
-
-    }
-    /*contact ..*/
-    #contact{
-        min-height: 100vh;
-        padding: 80px 20px;
-        background-color: #eff6ff;
-    }
-
-    .contactTitle{
-        text-align: center;
-        margin-bottom: 20px;
-
-    }
-
-    .contact{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .contact-item{
-        display: flex;
-        
-        align-items: center;
-        padding: 10px;
-        
-    
-        
-    }
-    .contact-item-item
-    {
-        background-color:white;
-        padding: 20px;
-        width: 260px;
-        border-radius: 30px;
-    }
-    .contact-item-item:hover{
-        box-shadow:0 15px 40px rgba(59, 130, 246, 0.3);
-    }
-
-    .menuToggle{
-        display: none;
-        font-size:26px;
-        color: white;
-        cursor: pointer;
-        padding: 10px 20px;
-        z-index: 2000;
-    }
-    
-    
-
-
-    
-   /*break points media quary*/
-    @media (max-width: 768px) {
-
-   .navbar{
-     justify-content: space-between;
-     padding: 0 16px;
-     
-   }
-
-    .menuToggle{
-        display: block;
-    }
-
-    
-    .navLinks {
-       background-color: rgba(15,23,42,0.98);
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 80px 30px;
-
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 1500;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
-    }
-    .navLinks.show{
-        display: flex;
-    }
-    
-    .navLinks a{
-        font-size: 20px;
-        padding: 12px 20px;
-        border-radius: 8px;
-        width: 100%;    
-    }
-
-    
-    .homeClass {
-        grid-template-columns: 1fr; 
-        text-align: center;
-    }
-
-    .homeContent {
-        padding-left: 0;
-        align-items: center;
-    }
-
-    .homeContent h1 {
-        font-size: 28px;
-    }
-
-    .homeContent p {
-        font-size: 14px;
-    }
-
-    .imgClass img {
-        margin: 30px auto 0;
-        max-width: 220px;
-    }
-
-    
-    .about-text {
-        text-align: left;
-        padding: 0 10px;
-    }
-    .languageGrid {
-                grid-template-columns: repeat(1, 1fr); 
-    }
-    .projectGrid {
-                grid-template-columns: repeat(1, 1fr); 
-    }
-    .certificatesGrid{
-                grid-template-columns: repeat(1, 1fr);
-    }
-}
-  </style>
-
-</head>
-<body>
-
+  <body>
     <nav>
-        <div class="navbar">
-           <div class="menuToggle" id="menuToggle">☰</div>
+      <div class="navbar">
+        <div class="menuToggle" id="menuToggle">☰</div>
 
-            <ul class="navLinks" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-                
-                
-
-            </ul>
-        </div>
+        <ul class="navLinks" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section id="home">
-        <div class="homeClass">
-            <div class="homeContent">
-                <h1>Hi I'am Parth Tank</h1>    
-                <p>Full Stack Developer | Expertise in Node.js, PHP, Java, .NET</p>
-            </div>
-            <div class="imgClass">
-                <img src="./img/mypic.png" alt="">
-
-            </div>
+      <div class="homeClass">
+        <div class="homeContent">
+          <h1>Hi I'am Parth Tank</h1>
+          <p>Full Stack Developer | Expertise in Node.js, PHP, Java, .NET</p>
         </div>
+        <div class="imgClass">
+          <img src="./images/mypic.png" alt="mypic" />
+        </div>
+      </div>
     </section>
 
-
     <section id="about">
-           <h1 class="aboutTitle">About Me</h1>
-        <div class="about-content">
-            <div class="about-text">
-                <header>
-                     <p>A detail-oriented Web Developer skilled in MERN stack experience, building dynamic and user-focused applications. I have
-                    a strong foundation in JavaScript, Node.js, React, and database technologies. Seeking an entry-level role to apply problemsolving skills, expand technical expertise, and contribute to impactful software solutions.
+      <h1 class="aboutTitle">About Me</h1>
+      <div class="about-content">
+        <div class="about-text">
+          <header>
+            <p>
+              A detail-oriented Web Developer skilled in MERN stack experience,
+              building dynamic and user-focused applications. I have a strong
+              foundation in JavaScript, Node.js, React, and database
+              technologies. Seeking an entry-level role to apply problemsolving
+              skills, expand technical expertise, and contribute to impactful
+              software solutions.
+            </p>
+          </header>
 
-                    
-                
-                </p>
+          <h1 class="skillsTitle">TECHNICAL SKILLS</h1>
 
-
-                </header>
-                
-                <h1 class="skillsTitle">TECHNICAL SKILLS</h1>
-
-                <div class="languageGrid">
-                    <div class="languageCategory">
-                        <h3>Front Eed</h3>
-                        <div class="languageItem">TailWindCss</div>
-                        <div class="languageItem">React.js</div>
-                        <div class="languageItem">HTML 5</div>
-                        <div class="languageItem">CSS </div>
-                        <div class="languageItem">BootStrap</div>
-                    </div>
-                    <div class="languageCategory">
-                        <h3>Back Eed</h3>
-                        <div class="languageItem">Node JS</div>
-                        <div class="languageItem">PHP</div>
-                        <div class="languageItem">JAVA</div>
-                        <div class="languageItem">.NET</div>
-                        
-                    </div>
-                    <div class="languageCategory">
-                        <h3>DataBase</h3>
-                        <div class="languageItem">My SQL</div>
-                        <div class="languageItem">MongoDB</div>
-                        
-                    </div>
-                    <div class="languageCategory">
-                        <h3>Tools & Platforms</h3>
-                        <div class="languageItem">Git</div>
-                        <div class="languageItem">Git Hub</div>
-                        <div class="languageItem">VS Code</div>
-                        
-                    </div>
-
-                </div>
-
-
-
+          <div class="languageGrid">
+            <div class="languageCategory">
+              <h3>Front Eed</h3>
+              <div class="languageItem">TailWindCss</div>
+              <div class="languageItem">React.js</div>
+              <div class="languageItem">HTML 5</div>
+              <div class="languageItem">CSS</div>
+              <div class="languageItem">BootStrap</div>
             </div>
+            <div class="languageCategory">
+              <h3>Back Eed</h3>
+              <div class="languageItem">Node JS</div>
+              <div class="languageItem">PHP</div>
+              <div class="languageItem">JAVA</div>
+              <div class="languageItem">.NET</div>
+            </div>
+            <div class="languageCategory">
+              <h3>DataBase</h3>
+              <div class="languageItem">My SQL</div>
+              <div class="languageItem">MongoDB</div>
+            </div>
+            <div class="languageCategory">
+              <h3>Tools & Platforms</h3>
+              <div class="languageItem">Git</div>
+              <div class="languageItem">Git Hub</div>
+              <div class="languageItem">VS Code</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="project">
-        <h1 class="projectTitle">Projects</h1>
+      <h1 class="projectTitle">Projects</h1>
 
-        <div class="projectGrid">
-            <div class="progectCard">
-                <h3>Expen Tracker</h3>
-                <p>I developed a full-stack Expense Tracker application enabling users to add, update, and delete income and expenses with
-                secure login.Integrated interactive charts to visualize spending/income patterns.
-                </p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
-
-            <div class="progectCard">
-                <h3>MovieMetrix</h3>
-                <p>I built a dynamic movie discovery platform using React.js with features like search, ratings, popularity sorting, and
-                watchlist management.Integrated TMDB API and optimized UI with responsive design and pagination.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
-
-            <div class="progectCard">
-                <h3>Thought(blog website)</h3>
-                <p>A Blogging website where users can add, edit, and remove blogs</p>
-                <p></p>
-                <P></P>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
-
-            <div class="progectCard">
-                <h3>TouringSpace(Tour & Travels website)</h3>
-                <p>Built a custom tour booking platform with secure login, online payments, and flexible tour scheduling. Offered
-categorized tours with detailed info and admin management. Focused on enhancing user experience with customizable
-tour options and hassle-free booking</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-
-            </div>
-
+      <div class="projectGrid">
+        <div class="progectCard">
+          <h3>Expen Tracker</h3>
+          <p>
+            I developed a full-stack Expense Tracker application enabling users
+            to add, update, and delete income and expenses with secure
+            login.Integrated interactive charts to visualize spending/income
+            patterns.
+          </p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
 
+        <div class="progectCard">
+          <h3>MovieMetrix</h3>
+          <p>
+            I built a dynamic movie discovery platform using React.js with
+            features like search, ratings, popularity sorting, and watchlist
+            management.Integrated TMDB API and optimized UI with responsive
+            design and pagination.
+          </p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="progectCard">
+          <h3>Thought(blog website)</h3>
+          <p>A Blogging website where users can add, edit, and remove blogs</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="progectCard">
+          <h3>TouringSpace</h3>
+          <p>
+            Built a custom tour booking platform with secure login, online
+            payments, and flexible tour scheduling. Offered categorized tours
+            with detailed info and admin management. Focused on enhancing user
+            experience with customizable tour options and hassle-free booking
+          </p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
     </section>
 
-
-<section id="certificates">
-    <h1 class="certificatesTitle">certificates</h1>
+    <section id="certificates">
+      <h1 class="certificatesTitle">certificates</h1>
 
       <div class="certificatesGrid">
-
-          <div class="certificatesCard">
-            <h3>Deloitte Technology Job Simulation</h3>
-            <div class="certificatesProvider">by Deloitte</div>
-            <div class="certificatesYear">2025</div>
-            
+        <div class="certificatesCard">
+          <h3>Deloitte Technology Job Simulation</h3>
+          <div class="certificatesProvider">by Deloitte</div>
+          <div class="certificatesYear">2025</div>
         </div>
         <div class="certificatesCard">
-            <h3>TCS iON Career Edge  Young Professional</h3>
-            <div class="certificatesProvider">by TCS iON</div>
-            <div class="certificatesYear">2025</div>
-            
+          <h3>TCS iON Career Edge Young Professional</h3>
+          <div class="certificatesProvider">by TCS iON</div>
+          <div class="certificatesYear">2025</div>
         </div>
         <div class="certificatesCard">
-            <h3>Cloud Computing</h3>
-            <div class="certificatesProvider">by Infosys Springboard</div>
-            <div class="certificatesYear">2025</div>
-            
-        </div>
-        
-        <div class="certificatesCard">
-            <h3>AI/ML for Geodata Analysis</h3>
-            <div class="certificatesProvider">by ISRO</div>
-            <div class="certificatesYear">2025</div>
-            
-        </div>
-        <div class="certificatesCard">
-            <h3>React.js</h3>
-            <div class="certificatesProvider">by Scaler</div>
-            <div class="certificatesYear">2024</div>
-            
-        </div>
-        <div class="certificatesCard">
-            <h3>Node.js</h3>
-            <div class="certificatesProvider">by Simplilearn</div>
-            <div class="certificatesYear">2025</div>
-            
+          <h3>Cloud Computing</h3>
+          <div class="certificatesProvider">by Infosys Springboard</div>
+          <div class="certificatesYear">2025</div>
         </div>
 
+        <div class="certificatesCard">
+          <h3>AI/ML for Geodata Analysis</h3>
+          <div class="certificatesProvider">by ISRO</div>
+          <div class="certificatesYear">2025</div>
+        </div>
+        <div class="certificatesCard">
+          <h3>React.js</h3>
+          <div class="certificatesProvider">by Scaler</div>
+          <div class="certificatesYear">2024</div>
+        </div>
+        <div class="certificatesCard">
+          <h3>Node.js</h3>
+          <div class="certificatesProvider">by Simplilearn</div>
+          <div class="certificatesYear">2025</div>
+        </div>
       </div>
+    </section>
 
-       
-</section>
-
-
-<section id="contact">
-  <h1 class="contactTitle">contact</h1>
-    <div class="contact">
+    <section id="contact">
+      <h1 class="contactTitle">contact</h1>
+      <div class="contact">
         <div class="contact-item">
-                   
-                    <div class="contact-item-item">
-                        <strong>Email</strong><br>
-                        parth@gmailcom
-                    </div>
+          <div class="contact-item-item">
+            <strong>Email</strong><br />
+            parth@gmail.com
+          </div>
         </div>
 
         <div class="contact-item">
-                   
-                    <div class="contact-item-item">
-                        <strong>Phone</strong><br>
-                        123456789
-                        
-                    </div>
+          <div class="contact-item-item">
+            <strong>Phone</strong><br />
+            123456789
+          </div>
         </div>
 
         <div class="contact-item">
-                   
-                    <div class="contact-item-item">
-                        <strong>linkedin</strong><br>
-                        parth tank
-                    </div>
+          <div class="contact-item-item">
+            <strong>linkedin</strong><br />
+            <a href="https://www.linkedin.com/in/parthtank1/">Parth Tank</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-
-    </div>
-
-</section>
-
-<script>
-     const menuToggle = document.getElementById("menuToggle");
-     const navLinks = document.getElementById("navLinks");
-
-
-      menuToggle.addEventListener("click",()=>{
-        navLinks.classList.toggle("show")
-      })
-
-</script>
-
-
-
-
-
-    
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
